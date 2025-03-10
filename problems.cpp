@@ -1,26 +1,31 @@
 1LL in ( * ) to transfer from int to ll
 1LL in ( + ) to transfer from int to ll
 
-
-    int arr1[3][3],arr2[3][3],arr3[3][3]={0};
-    for(int i=0;i<3;i++){
-       for(int j=0;j<3;j++){
-           cin>>arr1[i][j];
-       }
-    }
-    for(int i=0;i<3;i++) {
-        for(int j=0;j<3;j++) {
-            cin>>arr2[i][j];
+    int n;
+    cin >> n;
+    int b=n-1;
+    int arr[n][n];
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n ; j++) {
+            arr[i][j] = 0;
         }
     }
-    for(int i=0;i<3;i++) {
-        for(int j=0;j<3;j++) {
-            arr3[i][j]=arr1[i][j]+arr2[i][j];
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < b ; j++) {
+            arr[i][j] = 2;
         }
+        b--;
     }
-    for(int i=0;i<3;i++) {
-        for(int j=0;j<3;j++) {
-            cout<<arr3[i][j]<<" ";
+    b=n-1;
+    for (int i = 1; i < n; i++) {
+        for (int j = b; j < n ; j++) {
+            arr[i][j] = 1;
         }
-        cout<<endl;
+        b--;
+    }
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n ; j++) {
+            cout << arr[i][j] << " ";
+        }
+        cout << endl;
     }
