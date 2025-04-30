@@ -6,4 +6,17 @@ First
     *q=8; // Valid
     p=q; // Valid 
     q=p; // not valid
-   ============================================
+===============================================
+second
+    double d;
+    double *dp= &d;
+    void *p= dp;
+    // if store any pointer has datatype as double in void pointer you do (*not need*) to cast
+    ======================================================================================
+    double d;
+    void *p= &d;
+    // double *dp= p; // not valid
+    double *dp=(double*)p; // valid
+    // if store void pointer  in pointer has datatype as double you do (*need*) to cast
+===========================================================================================
+
