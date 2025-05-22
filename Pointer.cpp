@@ -18,6 +18,12 @@ second
     // double *dp= p; // not valid
     double *dp=(double*)p; // valid
     // if store void pointer  in pointer has datatype as double you do (*need*) to cast
+    ===================================================================================
+in void
+    // cout<<p<<endl; // true (address)
+    // cout<<*p<<endl  // error (value)
+    // cout<<*(double*)p<<endl; // true (value)
+    // cout<<(double*)p<<endl; // true (address)
 ===========================================================================================
 Third
     float* ptr,data;
@@ -35,3 +41,24 @@ Fourth
     int *ptr;
     ptr = &120;
 ===========================================================================================
+Fifth
+    arr[2] == *(arr + 2) == ptr[i] == *(ptr+i)
+    arr[i][j] == *(*(a + i) + j)
+    arr[1][2] == *(a[1] + 2)
+============================
+    i[arr] == arr[i][j]
+    exp.
+    arr[2][3]
+    1[arr] == arr[1][3]
+============================
+    int arr[]={1,2,3,4,5};
+    int *ptr = arr++; // erorrrrrrrr
+    int *ptr = arr + 1; // true
+==========================================================================================
+sixth 
+    can subtract only(no add,no multilply , no divided) two pointers if in same memory
+    int arr[]={1,2,3,4,5];
+    int *ptr1 = arr;
+    int *ptr2 = arr+2;
+   cout<< ptr2-ptr1 // result is 2
+    
