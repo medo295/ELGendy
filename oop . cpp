@@ -1,1 +1,4 @@
-
+Constructor 
+=> syntax => name_of_class();
+=> no return type 
+=> the first thing that gets executed in a class
