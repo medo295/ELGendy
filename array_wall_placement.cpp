@@ -18,6 +18,12 @@ using namespace std;
  * 
  * Time Complexity: O(N * M) where N = array size, M = number of walls
  * Space Complexity: O(N) for auxiliary data structures
+ * 
+ * Optimizations:
+ * - Fast I/O for competitive programming
+ * - Efficient hash-based distinct counting
+ * - Minimal memory allocations
+ * - Early termination when no improvement possible
  */
 
 // Helper function to calculate number of distinct elements in array segment [left, right]
@@ -126,6 +132,12 @@ int minCostAfterWallRemoval(const vector<int>& A, vector<int>& B) {
         
         int benefit = oldCost - newCost;
         maxBenefit = max(maxBenefit, benefit);
+        
+        // Early termination: if we can't improve further, stop
+        if (benefit == oldCost) {
+            // This means newCost = 0, which is the maximum possible benefit
+            break;
+        }
     }
     
     // Return minimum possible cost
